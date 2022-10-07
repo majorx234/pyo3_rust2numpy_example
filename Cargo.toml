@@ -1,0 +1,15 @@
+[package]
+name = "pyo3_rust2numpy_example"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+ndarray = "0.15.6"
+numpy = "0.17.2"
+
+[dependencies.pyo3]
+version = "0.17.2"
+features = ["extension-module"]
