@@ -16,8 +16,9 @@ mod rust_fn {
 }
 
 #[pymodule]
-fn rust_numpy_ext(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+fn pyo3_rust2numpy_example(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     #[pyfn(m)]
+    #[pyo3(name = "sine_wave")]
     fn sine_wave_wrapper<'py>(py: Python<'py>, size: usize, freq: f64) -> &'py PyArray1<f64> {
         rust_fn::sine_wave(size, freq).into_pyarray(py)
     }
